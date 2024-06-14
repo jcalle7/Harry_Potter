@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Gender</th>
+      <th>Year Of Birth</th>
+      <th>Eye Colour</th>
+      <th>Patronus</th>
+      <th>Actor</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let character of data; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 === 1}">
+      <td>{{ character.name }}</td>
+      <td>{{ character.species }}</td>
+      <td>{{ character.gender }}</td>
+      <td>{{ character.yearOfBirth }}</td>
+      <td>{{ character.eyeColour }}</td>
+      <td>{{ character.patronus }}</td>
+      <td>{{ character.actor }}</td>
+      <td><img [src]="character.image" [alt]="character.fullName"></td>
+    </tr>
+  </tbody>
+</table>
